@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
+        <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+        <link href="https://fonts.googleapis.com/css?family=Cinzel|Patua+One" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <title>Crystal Button Game</title>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='row'>
+                <h1>Crystal Button Shenanigans</h1>
+            </div>
+            <br>
+            <div class='row'>
+                <h2>Target Number: <span id='goalScore'></span></h2>
+            </div>
+            <br><br>
+            <div class='row'>
+                <h3>Total: <span id='totalPoints'></span></h3>
+            </div>
+            <br><br>
+            <div class='row'>
+                <h4>Wins: <span id='winCount'></span></h4>
+            </div>
+            <br>
+            <div class='row'>
+                <h4>Losses: <span id='lossCount'></span></h4>
+            </div>
+        </div>
+        <div class='container'>
+            <p id='alert'></p>
+        </div>
+        <div class='container'>
+            <div class='btn'>
+                <button class='gem1'>
+                    <p class='pointValue1'></p>
+                    <img class='crystalImage' src='assets/images/gem1.png'>
+                </button>
+                <button class='gem2'>
+                    <p class='pointValue2'></p>
+                    <img class='crystalImage' src='assets/images/gem2.png'>
+                </button>
+                <button class='gem3'>
+                    <p class='pointValue3'></p>
+                    <img class='crystalImage' src='assets/images/gem3.png'>
+                </button>
+                <button class='gem4'>
+                    <p class='pointValue4'></p>
+                    <img class='crystalImage' src='assets/images/gem4.png'>
+                </button>
+            </div>
+        </div>
+    <script src='assets/javascript/game.js'></script>
+    </body>
+</html>
