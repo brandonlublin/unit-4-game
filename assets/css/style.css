@@ -60,3 +60,13 @@ button {
     color: #fff;
     font-size: 75px;
 }
+@media only screen and (max-width: 840px) {
+    .container {
+        width: 100%;
+        font-size: 40px;
+    }
+    .crystalImage {
+        height: 100px;
+        width: 100px;
+    }
+}
