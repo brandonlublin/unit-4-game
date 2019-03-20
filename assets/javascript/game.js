@@ -21,62 +21,58 @@ $(document).ready(function() {
     $('#winCount').text(wins);
     $('#lossCount').text(losses);
     $('#totalPoints').text(userTotalPoints);
+    $('#alert').text('');
     
     //determine win or loss
     function winnerWinner(){
-            $('#alert').text('You WIN!!!')
+            $('#alert').html('<h2>"Winner!"</h2>')
             wins++; 
             $('#winCount').text(wins);
             reset();
         }
             //adds the losses to the userTotal
         function youLose(){
-            $('#alert').text('You LOSE!')
+            $('#alert').html('<h2>"LOSER!"</h2>')
             losses++;
-            $('#winCount').attr('.loser')
             $('#lossCount').text(losses);
             reset()
         }
     
     // event lister for button click
+    //add randomly assigned point value to userTotalPoints
+    //determine if the user wins or loses
     $('.gem1').on('click', function(){
         userTotalPoints = eval(userTotalPoints) + eval(gem1);
         $('#totalPoints').text(userTotalPoints);
-            if (userTotalPoints == targetScore) {
-                winnerWinner();
-            } else if (userTotalPoints > targetScore) {
-                youLose();
-            }
+        determineWinLoss();
     })
     $('.gem2').on('click', function(){
         userTotalPoints = eval(userTotalPoints) + eval(gem2);
         $('#totalPoints').text(userTotalPoints);
-            if (userTotalPoints == targetScore) {
-                winnerWinner();
-            } else if (userTotalPoints > targetScore) {
-                youLose();
-            }
+        determineWinLoss();
     })
     $('.gem3').on('click', function(){
         userTotalPoints = eval(userTotalPoints) + eval(gem3);
         $('#totalPoints').text(userTotalPoints);
-            if (userTotalPoints == targetScore) {
-                winnerWinner();
-            } else if (userTotalPoints > targetScore) {
-                youLose();
-            }
+        determineWinLoss();
     })
     $('.gem4').on('click', function(){
         userTotalPoints = eval(userTotalPoints) + eval(gem4);
         $('#totalPoints').text(userTotalPoints);
-            if (userTotalPoints == targetScore) {
+        determineWinLoss();
+    })
+
+    //determines if the user wins or loses based off point total vs target score
+    function determineWinLoss() {
+        if (userTotalPoints == targetScore) {
+            //if the user total hits the target, user is alerted that they win 
                 winnerWinner();
             } else if (userTotalPoints > targetScore) {
                 youLose();
             }
-    })
-
+    }
     //reset all values
+    //randomize all gem values again and set user total to 0
     function reset() {
         userTotalPoints = 0;
         targetScore = Math.floor(Math.random() * 101 + 19);
@@ -85,6 +81,6 @@ $(document).ready(function() {
         gem2 = Math.floor(Math.random()*11+1)
         gem3 = Math.floor(Math.random()*11+1)
         gem4 = Math.floor(Math.random()*11+1)
-        $('#alert').text('');
+        // $('#alert').html('');
     }
 })
